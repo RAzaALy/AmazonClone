@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Header from './components/Header';
+import Header from "./components/Header";
 import "./App.css";
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
         <div className="app">
           <Switch>
             <Route exact path="/">
+              <Header />
               <h1>Home</h1>
             </Route>
             <Route exact path="/checkout">
