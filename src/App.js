@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import Header from "./components/Header";
+import Home from "./components/Home";
 import "./App.css";
 
 function App() {
@@ -16,9 +17,10 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Header />
-              <h1>Home</h1>
+              <Home />
             </Route>
             <Route exact path="/checkout">
+              <Header />
               <h1>CheckOut</h1>
             </Route>
             <Route exact path="/login">
