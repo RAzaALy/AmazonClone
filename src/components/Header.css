@@ -5,6 +5,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  overflow-x: hidden;
 }
 .header .menu {
   display: flex;
@@ -31,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* margin-right: 1rem; */
+  margin-right: 1.5rem;
 }
 .header .cartCount {
   margin: 0rem 1rem;
@@ -66,4 +67,24 @@
   height: 2.4rem !important;
   padding: 2px !important;
   font-size: 2.5rem !important;
+}
+@media (max-width: 540px) {
+  .header .searchBox {
+    display: none;
+  }
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 406px) {
+  .header .options {
+    display: none;
+  }
+  .header .menu  .link{
+    display: block;
+  }
+  .header .menu .link .signIn{
+    display: block;
+    display: flex;
+  }
 }

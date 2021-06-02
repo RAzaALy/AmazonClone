@@ -19,21 +19,21 @@ const Header = () => {
         {/* Links  */}
         <div className="menu">
           {/* 1st Link */}
-          <Link to="/login" className="link">
-            <div className="options">
+          <Link to="/login" className="link ">
+            <div className="options signIn">
               <span className="lineOne">Hello RAza</span>
               <span className="lineTwo">Sign In</span>
             </div>
           </Link>
           {/* 2nd Link */}
-          <Link className="link">
-            <div className="options">
+          <Link to="/" className="link">
+            <div className="options ">
               <span className="lineOne">Returns</span>
               <span className="lineTwo">& Orders</span>
             </div>
           </Link>
           {/* 3rd Link */}
-          <Link className="link">
+          <Link to="/" className="link">
             <div className="options">
               <span className="lineOne">Your</span>
               <span className="lineTwo">Prime</span>
