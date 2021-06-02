@@ -37,8 +37,17 @@
 .header .cartCount {
   margin: 0rem 1rem;
   text-align: center;
-  color: #fff;
+  color: #111;
   font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #cd9042;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cart .icon {
   font-size: 2rem;

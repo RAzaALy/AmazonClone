@@ -2,8 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import { Consumer } from "./StateProvider";
 import "./Header.css";
 const Header = () => {
+  const [{ cart }] = Consumer();
+  // console.log(cart);
   return (
     <>
       <nav className="header">
@@ -43,7 +46,7 @@ const Header = () => {
           <Link to="/checkout" className="link">
             <div className="cart">
               <ShoppingCartOutlinedIcon className="icon" />
-              <span className="lineTwo cartCount">0</span>
+              <span className="lineTwo cartCount">{cart?.length}</span>
             </div>
           </Link>
         </div>
