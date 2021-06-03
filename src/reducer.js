@@ -1,22 +1,35 @@
 export const initialState = {
   cart: [],
-  user:null
+  user: null,
 };
+
+export const getCartTotal = (cart) =>
+  cart?.reduce((amount, item) => item.price + amount, 0);
 
 //Reducer :
 const reducer = (state, action) => {
-  console.log(action);
+  // console.log(action);
   switch (action.type) {
     case "ADD_TO_CART":
       //login for add to 🛒:
-      return { 
+      return {
         ...state,
-        cart:[...state.cart,action.item]
-       };
+        cart: [...state.cart, action.item],
+      };
 
-    case "REMOVE_RROM_CART":
+    case "REMOVE_FROM_CART":
       //logic for remove product from 🛒:
-      return { state };
+      let newCart = [...state.cart];
+      let index = state.cart.findIndex((cartItem) => cartItem.id === action.id);
+      if (index >= 0) {
+        //item exist in cart and remove it 🔥;
+        newCart.splice(index, 1);
+      } else {
+        console.error(
+          `Con't remove product (${action.id} as its no longer exists.)`
+        );
+      }
+      return { ...state, cart: newCart };
 
     default:
       return state;

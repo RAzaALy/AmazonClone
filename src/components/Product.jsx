@@ -2,7 +2,7 @@ import React from "react";
 import "./Product.css";
 import { Consumer } from "./StateProvider";
 const Product = ({ id, desc, title, rating, image, price }) => {
-  const [{ cart }, dispatch] = Consumer();
+  const [{cart}, dispatch] = Consumer();
   const addToCart = () => {
     //add item to cart:
     dispatch({

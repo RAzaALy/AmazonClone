@@ -62,13 +62,12 @@ const Home = () => {
             image="images/product6.png"
           />
         </div>
-
         <h1>Liquid Crystal Dispaly</h1>
         <div className="row">
           <Product
             id={11}
             key="5"
-            title="IPhone"
+            title="Samsung LCD"
             desc="Stands for Liquid Crystal Display. LCD is a flat panel display technology commonly used in TVs and computer monitors. ... Instead of firing electrons at a glass screen."
             price={46.2}
             rating={4}
@@ -77,7 +76,7 @@ const Home = () => {
           <Product
             id={10}
             key="6"
-            title="Samsung Phone"
+            title="Acer LCD"
             desc="Various Sizes LED Screen for Outdoor and Indoor Advertising LED Screen Solution! 9 Years' Experience in Custom Solutions, Over 3000 Successful Cases. Creative Solutions. Lifelong Maintenance. "
             price={42.73}
             rating={5}
@@ -88,11 +87,43 @@ const Home = () => {
           <Product
             key="7"
             id={9}
-            title="Liquid Crystal Screen"
+            title="SONY X90J"
             desc="Gaming computers are specialized personal computers designed for playing video games. Gaming computers typically differ from mainstream computers by using high-performance video cards"
-            price={45.62}
+            price={245.62}
             rating={5}
-            image="images/product15.png"
+            image="images/product03.png"
+          />
+        </div>
+        <h1>Gaming Curved LCD</h1>
+        <div className="row">
+          <Product
+            key="72"
+            id={193}
+            title="SAMSUNG Q900A"
+            desc="Gaming computers are specialized personal computers designed for playing video games. Gaming computers typically differ from mainstream computers by using high-performance video cards"
+            price={415.62}
+            rating={5}
+            image="images/product02.png"
+          />
+          <Product
+            key="77"
+            id={192}
+            title="MI QLED TV"
+            desc="Gaming computers are specialized personal computers designed for playing video games. Gaming computers typically differ from mainstream computers by using high-performance video cards"
+            price={345.62}
+            rating={5}
+            image="images/product04.png"
+          />
+        </div>
+        <div className="row">
+          <Product
+            key="77"
+            id={179}
+            title="SONY Z8H"
+            desc="Gaming computers are specialized personal computers designed for playing video games. Gaming computers typically differ from mainstream computers by using high-performance video cards"
+            price={425.62}
+            rating={5}
+            image="images/product01.png"
           />
         </div>
         <h1>Electronics</h1>
