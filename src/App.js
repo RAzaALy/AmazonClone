@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
+import Scroll from "./components/Scroll";
 import "./App.css";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             </Route>
             <Redirect to="/" />
           </Switch>
+          <Scroll showBelow={400} />
         </div>
       </Router>
     </>
