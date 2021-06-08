@@ -22,7 +22,12 @@
   margin: 0rem 1rem;
 }
 .header .options .lineOne {
-  font-size: 1rem;
+  font-size: 1.1rem;
+}
+.header .options .lineOne .lineOneSpan{
+font-weight: bolder;
+font-size: 1.2rem;
+text-transform: capitalize;
 }
 .header .options .lineTwo {
   font-size: 1.3rem;
@@ -85,7 +90,12 @@
     font-size: 55%;
   }
 }
-@media (max-width: 406px) {
+
+@media (max-width: 420px) {
+  .header{
+    justify-content: space-between;
+  }
+
   .header .options {
     display: none;
   }
@@ -95,5 +105,8 @@
   .header .menu .link .signIn{
     display: block;
     display: flex;
+  }
+  .header .logo{
+    width: 8rem;
   }
 }

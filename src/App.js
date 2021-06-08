@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Redirect,
@@ -10,9 +10,34 @@ import Home from "./components/Home";
 import Checkout from "./components/Checkout";
 import Login from "./components/Login";
 import Scroll from "./components/Scroll";
+import { Consumer } from "./components/StateProvider";
+import { auth } from "./firebase";
 import "./App.css";
 
 function App() {
+  const [{ user }, dispatch] = Consumer();
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        //user login 👍:
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        //user logout 👎:
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+    return () => {
+      //cleanup
+      unsubscribe();
+    };
+  });
+  console.log(user);
   return (
     <>
       <Router>
