@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
 import { auth } from "../firebase";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -19,7 +21,16 @@ function Login() {
         setUser(username);
         history.push("/");
       })
-      .catch((error) => alert(error.message));
+      .catch((error) =>{toast.error(`${error.message}`, {
+        position: "top-right",
+        zIndex: 43343434,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });});
   };
   const register = (e) => {
     e.preventDefault();
@@ -35,14 +46,38 @@ function Login() {
         return auth.user.updateProfile({
           displayName: username,
         });
+        
       })
-      .catch((error) => alert(error.message));
+      .catch((error) =>{
+        toast.error(`${error.message}`, {
+          position: "top-right",
+          zIndex: 43343434,
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+      });
+      setUsername(username);
+      setUser(username);
     }else{
-      alert('username required');
+      toast.info(`Username must contain 3 letters or more.`, {
+        position: "top-right",
+        zIndex: 43343434,
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
   return (
     <div className="login">
+        <ToastContainer style={{ fontSize: "1.4rem" }} />
       <Link to="/">
         <img src="images/logo2.png" className="login__logo" alt="logo" />
       </Link>

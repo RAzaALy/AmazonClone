@@ -11,6 +11,8 @@ import Checkout from "./components/Checkout";
 import Login from "./components/Login";
 import Scroll from "./components/Scroll";
 import { Consumer } from "./components/StateProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { auth } from "./firebase";
 import "./App.css";
 
@@ -24,24 +26,35 @@ function App() {
           type: "SET_USER",
           user: authUser,
         });
+        toast.info(`You have sussessfully login.`, {
+          position: "top-right",
+          zIndex: 43343434,
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       } else {
         //user logout 👎:
         dispatch({
           type: "SET_USER",
           user: null,
         });
+        <Redirect to="/login" />   
       }
     });
     return () => {
       //cleanup
       unsubscribe();
     };
-  });
-  console.log(user);
+  },[]);
   return (
     <>
       <Router>
         <div className="app">
+      <ToastContainer style={{ fontSize: "1.4rem" }} />
           <Switch>
             <Route exact path="/">
               <Header />
