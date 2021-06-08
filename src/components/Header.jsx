@@ -7,7 +7,7 @@ import { Consumer } from "./StateProvider";
 import "./Header.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const Header = () => {
+const Header = ({name}) => {
   const [{ cart, user }] = Consumer();
 
   // console.log(cart);

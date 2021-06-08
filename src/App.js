@@ -26,6 +26,7 @@ function App() {
           type: "SET_USER",
           user: authUser,
         });
+        console.log(user.displayName);
         toast.info(`You have sussessfully login.`, {
           position: "top-right",
           zIndex: 43343434,
@@ -57,7 +58,7 @@ function App() {
       <ToastContainer style={{ fontSize: "1.4rem" }} />
           <Switch>
             <Route exact path="/">
-              <Header />
+              <Header name={user} />
               <Home />
             </Route>
             <Route exact path="/checkout">
