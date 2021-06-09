@@ -15,7 +15,8 @@ import { auth } from "./firebase";
 import "./App.css";
 
 function App() {
-  const [{ user }, dispatch] = Consumer();
+  // eslint-disable-next-line
+  const [{},dispatch] = Consumer();
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
       if (authUser) {

@@ -2,7 +2,8 @@ import React from "react";
 import { Consumer } from "./StateProvider";
 import "./CheckoutItem.css";
 const CheckoutItem = ({ id, title, image, price, rating, desc }) => {
-  const [{ cart }, dispatch] = Consumer();
+  // eslint-disable-next-line
+  const [{}, dispatch] = Consumer();
   // console.log(cart);
   const removeFrmCart = () => {
     //remove item to cart:
