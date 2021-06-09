@@ -38,6 +38,7 @@ function App() {
       //cleanup
       unsubscribe();
     };
+    // eslint-disable-next-line
   },[]);
   return (
     <>
