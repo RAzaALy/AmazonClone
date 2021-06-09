@@ -31,7 +31,6 @@ function App() {
           type: "SET_USER",
           user: null,
         });
-        <Redirect to="/login" />   
       }
     });
     return () => {
