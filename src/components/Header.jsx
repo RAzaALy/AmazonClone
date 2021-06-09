@@ -7,14 +7,14 @@ import { Consumer } from "./StateProvider";
 import "./Header.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const Header = ({name}) => {
+const Header = () => {
   const [{ cart, user }] = Consumer();
 
   // console.log(cart);
   const login = () => {
     //signout
     if (user) {
-      toast.info(`${user.displayName} have sussessfully logout.`, {
+      toast.info(`You have sussessfully logout.`, {
         position: "top-right",
         zIndex: 43343434,
         autoClose: 5000,
@@ -46,7 +46,7 @@ const Header = ({name}) => {
           <Link to={"/login"} className="link ">
             <div onClick={login} className="options signIn"> 
               <span className="lineOne">Hello,<span className="lineOneSpan"> {user?.displayName}</span></span>
-              <span className="lineTwo" >{user ? "Sign Out" : "Sign In"}</span>
+              <span className="lineTwo" onClick={login} >{user ? "Sign Out" : "Sign In"}</span>
             </div>
           </Link>
           {/* 2nd Link */}

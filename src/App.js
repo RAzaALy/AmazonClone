@@ -11,8 +11,6 @@ import Checkout from "./components/Checkout";
 import Login from "./components/Login";
 import Scroll from "./components/Scroll";
 import { Consumer } from "./components/StateProvider";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { auth } from "./firebase";
 import "./App.css";
 
@@ -26,17 +24,7 @@ function App() {
           type: "SET_USER",
           user: authUser,
         });
-        console.log(user.displayName);
-        toast.info(`You have sussessfully login.`, {
-          position: "top-right",
-          zIndex: 43343434,
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
+        
       } else {
         //user logout 👎:
         dispatch({
@@ -55,10 +43,9 @@ function App() {
     <>
       <Router>
         <div className="app">
-      <ToastContainer style={{ fontSize: "1.4rem" }} />
           <Switch>
             <Route exact path="/">
-              <Header name={user} />
+              <Header />
               <Home />
             </Route>
             <Route exact path="/checkout">
@@ -70,7 +57,7 @@ function App() {
             </Route>
             <Redirect to="/" />
           </Switch>
-          <Scroll showBelow={400} />
+          <Scroll showBelow={300} />
         </div>
       </Router>
     </>
